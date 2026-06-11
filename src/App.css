@@ -2118,12 +2118,12 @@ html, body {
   flex-grow: 1;
   background: transparent;
   border: none;
-  color: #fff;
   font-size: 20px;
   outline: none;
 }
 .search-input::placeholder { color: #52525b; }
 .premium-search-input {
+  color: #fff;
   background-color: #1a1a1a;
   border-radius: 12px;
   padding: 16px 16px 16px 48px;

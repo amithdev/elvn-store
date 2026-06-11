@@ -459,6 +459,9 @@ function FindYourJersey() {
 
   const handleCategoryClick = (category) => {
     const finalQueries = [...queries];
+    if (inputValue.trim() !== '' && !finalQueries.includes(inputValue.trim())) {
+      finalQueries.push(inputValue.trim());
+    }
     if (!finalQueries.includes(category)) {
       finalQueries.push(category);
     }
