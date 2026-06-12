@@ -1423,10 +1423,10 @@ function ProductPage() {
           </div>
           <div className="badge-grid">
             {[
-              { id: 'qualifiers', src: '/images/badge_qualifiers.jpg' },
-              { id: 'unites', src: '/images/badge_unites.jpg' },
-              { id: 'fifa', src: '/images/badge_fifa.jpg' },
-              { id: 'usa2026', src: '/images/badge_2026.jpg' }
+              { id: 'FIFA Qualifiers', src: '/images/badge_qualifiers.jpg' },
+              { id: 'Football Unites The World', src: '/images/badge_unites.jpg' },
+              { id: 'FIFA World Cup Winners', src: '/images/badge_fifa.jpg' },
+              { id: 'World Cup 2026', src: '/images/badge_2026.jpg' }
             ].map(badge => (
               <div 
                 key={badge.id}
