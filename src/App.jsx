@@ -1847,11 +1847,11 @@ function StickyCart() {
       const customPrintVariantId = customPrintQuery.length > 0 ? customPrintQuery[0].variants[0].id : null;
 
       const sleeveBadgeQuery = await shopifyClient.product.fetchQuery({ query: 'title:"Sleeve Badge Add-on"' });
-      const sleeveBadgeVariantId = sleeveBadgeQuery.length > 0 ? sleeveBadgeQuery[0].variants[0].id : null;
+      const sleeveBadgeProduct = sleeveBadgeQuery.length > 0 ? sleeveBadgeQuery[0] : null;
 
       const lineItemsToAdd = [];
       let totalCustomPrints = 0;
-      let totalSleeveBadges = 0;
+      let badgeCounts = {};
 
       cartItems.forEach(item => {
         const customAttributes = [
@@ -1872,7 +1872,7 @@ function StickyCart() {
 
         if (item.badge && item.badge !== 'none') {
           customAttributes.push({ key: "Badge", value: item.badge });
-          totalSleeveBadges++;
+          badgeCounts[item.badge] = (badgeCounts[item.badge] || 0) + 1;
         }
 
         lineItemsToAdd.push({
@@ -1889,10 +1889,14 @@ function StickyCart() {
         });
       }
 
-      if (totalSleeveBadges > 0 && sleeveBadgeVariantId) {
-        lineItemsToAdd.push({
-          variantId: sleeveBadgeVariantId,
-          quantity: totalSleeveBadges
+      if (sleeveBadgeProduct) {
+        Object.entries(badgeCounts).forEach(([badgeName, count]) => {
+          const matchedVariant = sleeveBadgeProduct.variants.find(v => v.title.toLowerCase().includes(badgeName.toLowerCase()));
+          const vId = matchedVariant ? matchedVariant.id : sleeveBadgeProduct.variants[0].id;
+          lineItemsToAdd.push({
+            variantId: vId,
+            quantity: count
+          });
         });
       }
 
