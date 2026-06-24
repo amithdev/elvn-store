@@ -1377,7 +1377,7 @@ function ProductPage() {
           </div>
         </div>
         
-          <div className="addon-card" style={{ opacity: 0.6, cursor: 'not-allowed' }} onClick={() => alert("Customization of jerseys has been paused for a limited time.")}>
+          <div className="addon-card" style={{ opacity: 0.6, pointerEvents: 'none' }}>
           <div className="addon-header">
             <div className="addon-title">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
@@ -1386,34 +1386,12 @@ function ProductPage() {
             <span className="addon-price-pill">+₹{customPrintPrice}</span>
           </div>
           <p className="addon-subtitle">Official player-style printing.</p>
-          
-          {!showNameInputs ? (
-            <button className="tap-to-customize-btn" style={{ pointerEvents: 'none' }}>
-              Tap to customize
-            </button>
-          ) : (
-            <div className="custom-inputs">
-              <input 
-                type="text" 
-                placeholder="Name on Jersey (e.g. KROOS)" 
-                value={nameInput}
-                onChange={(e) => setNameInput(e.target.value.toUpperCase())}
-                maxLength={12}
-                autoFocus
-              />
-              <input 
-                type="number" 
-                placeholder="Number (e.g. 8)" 
-                value={numberInput}
-                onChange={(e) => setNumberInput(e.target.value)}
-                min="0"
-                max="99"
-              />
-            </div>
-          )}
+          <p style={{ color: '#ef4444', fontSize: '13px', fontWeight: '500', marginTop: '8px', padding: '8px', background: 'rgba(239, 68, 68, 0.1)', borderRadius: '6px' }}>
+            Customization of jerseys has been paused for a limited time.
+          </p>
         </div>
 
-        <div className="addon-card" style={{ opacity: 0.6, cursor: 'not-allowed' }} onClick={() => alert("Customization of jerseys has been paused for a limited time.")}>
+        <div className="addon-card" style={{ opacity: 0.6, pointerEvents: 'none' }}>
           <div className="addon-header">
             <div className="addon-title">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
@@ -1421,6 +1399,9 @@ function ProductPage() {
             </div>
             <span className="addon-price-pill">+₹{sleeveBadgePrice}</span>
           </div>
+          <p style={{ color: '#ef4444', fontSize: '13px', fontWeight: '500', margin: '12px 0', padding: '8px', background: 'rgba(239, 68, 68, 0.1)', borderRadius: '6px' }}>
+            Customization of jerseys has been paused for a limited time.
+          </p>
           <div className="badge-grid" style={{ pointerEvents: 'none' }}>
             {[
               { id: 'FIFA Qualifiers', src: '/images/badge_qualifiers.jpg' },
