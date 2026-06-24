@@ -1424,7 +1424,12 @@ function ProductPage() {
           </div>
         </div>
 
-        <button className="add-to-cart-btn-neon" onClick={() => {
+        <button 
+          className="add-to-cart-btn-neon" 
+          disabled={selectedVersion === 'Fan'}
+          style={selectedVersion === 'Fan' ? { opacity: 0.5, cursor: 'not-allowed', background: '#333', color: '#888' } : {}}
+          onClick={() => {
+          if (selectedVersion === 'Fan') return;
           let variantId = product.variants[0]?.id;
           if (product.variants && product.variants.length > 0) {
             const matched = product.variants.find(v => 
@@ -1449,7 +1454,7 @@ function ProductPage() {
             variantId: variantId
           });
         }}>
-          ADD TO CART
+          {selectedVersion === 'Fan' ? 'OUT OF STOCK' : 'ADD TO CART'}
         </button>
         
         <ul className="guarantee-list">
