@@ -310,7 +310,7 @@ function Hero() {
 
         <div className="product-badge">
           <p className="badge-title">Portugal 26-27 -<br/>Player version jersey</p>
-          <strong className="badge-price">$1199.00</strong>
+          <strong className="badge-price">₹1299.00</strong>
         </div>
 
         <div className="cta-container">
