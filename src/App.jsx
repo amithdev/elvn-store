@@ -1459,7 +1459,7 @@ function ProductPage() {
         
         <ul className="guarantee-list">
           <li>• Premium Quality Guaranteed</li>
-          <li>• Delivery in 5-10 business days.</li>
+          <li>• Delivery in 4-8 business days.</li>
           <li>• 24-48 hours dispatch time.</li>
           <li>• 4-7 days extra for customization.</li>
           <li>• Secure Payments</li>
