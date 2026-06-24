@@ -1377,7 +1377,7 @@ function ProductPage() {
           </div>
         </div>
         
-        <div className="addon-card">
+          <div className="addon-card" style={{ opacity: 0.6, cursor: 'not-allowed' }} onClick={() => alert("Customization of jerseys has been paused for a limited time.")}>
           <div className="addon-header">
             <div className="addon-title">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
@@ -1388,7 +1388,7 @@ function ProductPage() {
           <p className="addon-subtitle">Official player-style printing.</p>
           
           {!showNameInputs ? (
-            <button className="tap-to-customize-btn" onClick={() => setShowNameInputs(true)}>
+            <button className="tap-to-customize-btn" style={{ pointerEvents: 'none' }}>
               Tap to customize
             </button>
           ) : (
@@ -1413,7 +1413,7 @@ function ProductPage() {
           )}
         </div>
 
-        <div className="addon-card">
+        <div className="addon-card" style={{ opacity: 0.6, cursor: 'not-allowed' }} onClick={() => alert("Customization of jerseys has been paused for a limited time.")}>
           <div className="addon-header">
             <div className="addon-title">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
@@ -1421,7 +1421,7 @@ function ProductPage() {
             </div>
             <span className="addon-price-pill">+₹{sleeveBadgePrice}</span>
           </div>
-          <div className="badge-grid">
+          <div className="badge-grid" style={{ pointerEvents: 'none' }}>
             {[
               { id: 'FIFA Qualifiers', src: '/images/badge_qualifiers.jpg' },
               { id: 'Football Unites The World', src: '/images/badge_unites.jpg' },
@@ -1431,7 +1431,6 @@ function ProductPage() {
               <div 
                 key={badge.id}
                 className={`badge-item ${selectedBadge === badge.id ? 'active' : ''}`}
-                onClick={() => setSelectedBadge(badge.id)}
               >
                 <img src={badge.src} alt="Badge Option" className="badge-content" />
                 {selectedBadge === badge.id && (
